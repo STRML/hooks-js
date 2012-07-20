@@ -247,9 +247,9 @@ Document.pre('save', function (next) {
   this.key = "value";
   next();
 });
-// Post handler occurs before `set` calls back. This is useful if we need to grab something
-// async before `set` finishes.
-Document.post('set', function (next) {
+// Post handler occurs before `save` calls back. This is useful if we need to grab something
+// async before `save` finishes.
+Document.post('save', function (next) {
   var me = this;
   getSomethingAsync(function(value){ // let's assume it returns "Hello Async"
     me.key2 = value;
